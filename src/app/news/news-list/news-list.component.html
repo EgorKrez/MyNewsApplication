@@ -20,7 +20,7 @@
             <input type="text" placeholder="Title filter..." [(ngModel)]='searchString'>
         </div>
         <div class="add-button">
-            <button (click)='this.authService.addNews()'>Add Article</button>
+            <button *ngIf='authService.isAdmin' (click)='this.authService.addNews()'>Add Article</button>
         </div>
     </div>
   <div *ngIf="!isShowFavorites">
